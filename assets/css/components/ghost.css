@@ -14,7 +14,7 @@
 
 .kg-image {
     max-width: 100%;
-    width: 100%;
+    max-height: 120rem;
 }
 
 .kg-card figcaption {
@@ -96,7 +96,7 @@
 .kg-gallery-card + .kg-gallery-card,
 .kg-image-card.kg-width-wide + .kg-gallery-card,
 .kg-image-card.kg-width-wide + .kg-image-card.kg-width-wide {
-    margin-top: calc( -7vw + 0.75em );
+    margin-top: calc(-7vw + 0.75em);
 }
 
 .kg-bookmark-card {
@@ -132,7 +132,7 @@
 }
 
 .kg-bookmark-container:hover .kg-bookmark-title {
-    opacity: 1.0;
+    opacity: 1;
     color: var(--color-primary);
 }
 
@@ -185,7 +185,7 @@
 }
 
 .kg-bookmark-author:after {
-    content: "—";
+    content: '—';
     margin: 0 6px;
 }
 
@@ -219,6 +219,6 @@
     }
 
     .kg-bookmark-content {
-        order: 2
+        order: 2;
     }
 }

@@ -1,0 +1,9 @@
+<footer class="blog-info footer">
+  {{#if posts}}
+    <nav class='navigation'>
+      {{!-- only show navigation on the home page --}}
+      {{pagination}}
+    </nav>
+  {{/if}}
+   <p>© {{date format="YYYY"}} {{@site.title}}</p>
+</footer>

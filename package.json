@@ -17,7 +17,8 @@
     "ship": "STATUS=$(git status --porcelain); echo $STATUS; if [ -z \"$STATUS\" ]; then npm run version && git push --follow-tags; fi"
   },
   "author": {
-    "name": "Chris Barry"
+    "name": "Chris Barry",
+    "email": "me@chrisb.xyz"
   },
   "gpm": {
     "type": "theme",

@@ -8,9 +8,7 @@
     </header>
 
     {{#if feature_image}}
-    <div class="post-content-image">
-        <img class="kg-image" src="{{feature_image}}" alt="{{title}}" />
-    </div>
+        <img class="kg-image" src="{{feature_image}}" alt="{{title}}" loading='lazy' />
     {{/if}}
 
     <div class="post-content-body">

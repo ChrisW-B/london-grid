@@ -1,0 +1,10 @@
+<p>
+  Tags:
+  {{#foreach tags}}
+    {{#if @last}}
+      <a href={{url}}>#{{name}}</a>
+    {{else}}
+      <a href={{url}}>#{{name}}</a>,
+    {{/if}}
+  {{/foreach}}
+</p>
