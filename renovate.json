@@ -1,5 +1,27 @@
 {
-  "extends": [
-    "@tryghost:theme"
+  "extends": ["config:base", "group:recommended", "group:testNonMajor", "group:linters"],
+  "timezone": "America/New_York",
+  "masterIssue": true,
+  "separateMinorPatch": true,
+  "reviewers": ["chrisw-b"],
+  "labels": ["dependency"],
+  "assignAutomerge": true,
+  "automerge": true,
+  "schedule": ["before 12pm on Monday"],
+  "packageRules": [
+    {
+      "packagePatterns": ["*"],
+      "patch": {
+        "groupName": "all patch dependencies",
+        "groupSlug": "all-patch"
+      }
+    },
+    {
+      "packagePatterns": ["*"],
+      "minor": {
+        "groupName": "all minor dependencies",
+        "groupSlug": "all-minor"
+      }
+    }
   ]
 }
