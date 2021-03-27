@@ -1,3 +1,5 @@
+/* stylelint-disable no-duplicate-selectors */
+
 /* Reset
 /* ---------------------------------------------------------- */
 
@@ -78,11 +80,11 @@ time,
 mark,
 audio,
 video {
-    margin: 0;
-    padding: 0;
     border: 0;
     font: inherit;
     font-size: 1.8rem;
+    margin: 0;
+    padding: 0;
     vertical-align: baseline;
 }
 body {
@@ -96,20 +98,20 @@ blockquote,
 q {
     quotes: none;
 }
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
+blockquote::before,
+blockquote::after,
+q::before,
+q::after {
     content: '';
     content: none;
 }
 table {
-    border-spacing: 0;
     border-collapse: collapse;
+    border-spacing: 0;
 }
 img {
-    max-width: 100%;
     height: auto;
+    max-width: 100%;
 }
 html {
     box-sizing: border-box;
@@ -119,18 +121,15 @@ html {
     -webkit-text-size-adjust: 100%;
 }
 *,
-*:before,
-*:after {
+*::before,
+*::after {
     box-sizing: inherit;
 }
 a {
     background-color: transparent;
     color: var(--color-primary);
 }
-a:active,
-a:hover {
-    outline: 0;
-}
+
 b,
 strong {
     font-weight: bold;
@@ -141,17 +140,17 @@ dfn {
     font-style: italic;
 }
 h1 {
-    margin: 0.67em 0;
     font-size: 2em;
+    margin: 0.67em 0;
 }
 small {
     font-size: 80%;
 }
 sub,
 sup {
-    position: relative;
     font-size: 75%;
     line-height: 0;
+    position: relative;
     vertical-align: baseline;
 }
 sup {
@@ -167,13 +166,13 @@ svg:not(:root) {
     overflow: hidden;
 }
 mark {
-    background-color: #fdffb6;
+    background-color: var(--color-primary---15l);
 }
 code,
 kbd,
 pre,
 samp {
-    font-family: monospace, monospace;
+    font-family: monospace;
     font-size: 1em;
 }
 button,
@@ -181,13 +180,13 @@ input,
 optgroup,
 select,
 textarea {
-    margin: 0;
     color: inherit;
     font: inherit;
+    margin: 0;
 }
 button {
-    overflow: visible;
     border: none;
+    overflow: visible;
 }
 button,
 select {
@@ -197,8 +196,8 @@ button,
 html input[type='button'],
 input[type='reset'],
 input[type='submit'] {
-    cursor: pointer;
     -webkit-appearance: button;
+    cursor: pointer;
 }
 button[disabled],
 html input[disabled] {
@@ -206,15 +205,13 @@ html input[disabled] {
 }
 button::-moz-focus-inner,
 input::-moz-focus-inner {
-    padding: 0;
     border: 0;
+    padding: 0;
 }
 input {
     line-height: normal;
 }
-input:focus {
-    outline: none;
-}
+
 input[type='checkbox'],
 input[type='radio'] {
     box-sizing: border-box;
@@ -225,24 +222,23 @@ input[type='number']::-webkit-outer-spin-button {
     height: auto;
 }
 input[type='search'] {
-    box-sizing: content-box;
-
     -webkit-appearance: textfield;
+    box-sizing: content-box;
 }
 input[type='search']::-webkit-search-cancel-button,
 input[type='search']::-webkit-search-decoration {
     -webkit-appearance: none;
 }
 legend {
-    padding: 0;
     border: 0;
+    padding: 0;
 }
 textarea {
     overflow: auto;
 }
 table {
-    border-spacing: 0;
     border-collapse: collapse;
+    border-spacing: 0;
 }
 td,
 th {
@@ -254,45 +250,45 @@ th {
    ========================================================================== */
 
 html {
+    font-size: 62.5%;
     overflow-x: hidden;
     overflow-y: scroll;
-    font-size: 62.5%;
 
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
-    overflow-x: hidden;
+    background: var(--color-bg-base);
     color: var(--color-base);
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
         'Open Sans', 'Helvetica Neue', sans-serif;
+    -moz-font-feature-settings: 'liga' on;
     font-size: 1.5rem;
-    line-height: 1.6em;
-    font-weight: 400;
-    font-style: normal;
-    letter-spacing: 0;
-    text-rendering: optimizeLegibility;
-    background: var(--color-bg-base);
 
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    -moz-font-feature-settings: 'liga' on;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 1.6em;
+    overflow-x: hidden;
+    text-rendering: optimizeLegibility;
 }
 
 ::selection {
+    background: var(--color-primary---10l);
     text-shadow: none;
-    background: #cbeafb;
 }
 
 hr {
-    position: relative;
-    display: block;
-    width: 100%;
-    margin: 2.5em 0 3.5em;
-    padding: 0;
-    height: 1px;
     border: 0;
-    border-top: 1px solid color(var(--color-border) l(+5%));
+    border-top: 1px solid var(--color-base--5l);
+    display: block;
+    height: 1px;
+    margin: 2.5em 0 3.5em;
     overflow: visible;
+    padding: 0;
+    position: relative;
+    width: 100%;
 }
 
 audio,
@@ -306,29 +302,30 @@ video {
 
 p,
 blockquote {
-    margin: 0 0 1.5em 0;
+    margin: 0 0 1.5em;
 }
 
 blockquote {
-    margin: 1.5em 0;
-    padding: 0 1.6em 0 1.6em;
     border-left: var(--color-bg) 0.5em solid;
+    margin: 1.5em 0;
+    padding: 0 1.6em;
 }
 
 blockquote p {
-    margin: 0.8em 0;
     font-size: 1.2em;
     font-weight: 300;
+    margin: 0.8em 0;
 }
 
 blockquote small {
     display: inline-block;
-    margin: 0.8em 0 0.8em 1.5em;
     font-size: 0.9em;
+    margin: 0.8em 0 0.8em 1.5em;
     opacity: 0.8;
 }
+
 /* Quotation marks */
-blockquote small:before {
+blockquote small::before {
     content: '\2014 \00A0';
 }
 
@@ -345,7 +342,8 @@ a {
     transition: 0.4s ease;
 }
 
-a:hover {
+a:hover,
+a:focus {
     text-decoration: underline;
     transition: 0.2s ease;
 }
@@ -356,16 +354,16 @@ h3,
 h4,
 h5,
 h6 {
-    margin-top: 0;
-    line-height: 1.15;
     font-weight: 700;
+    line-height: 1.15;
+    margin-top: 0;
     text-rendering: optimizeLegibility;
 }
 
 h1 {
-    margin: 0 0 0.5em 0;
     font-size: 5.7rem;
     font-weight: 800;
+    margin: 0 0 0.5em;
 }
 @media (max-width: 500px) {
     h1 {
@@ -374,8 +372,8 @@ h1 {
 }
 
 h2 {
-    margin: 1.5em 0 0.5em 0;
-    font-size: 4rem;
+    font-size: 2rem;
+    margin: 1.5em 0 0.5em;
 }
 @media (max-width: 500px) {
     h2 {
@@ -384,8 +382,8 @@ h2 {
 }
 
 h3 {
-    margin: 1.5em 0 1em 0;
     font-size: 3.2rem;
+    margin: 1.5em 0 1em;
 }
 @media (max-width: 500px) {
     h3 {
@@ -394,16 +392,16 @@ h3 {
 }
 
 h4 {
-    margin: 1.5em 0 1em 0;
     font-size: 2.6rem;
+    margin: 1.5em 0 1em;
 }
 
 h5 {
-    margin: 1.5em 0 1em 0;
     font-size: 2.4rem;
+    margin: 1.5em 0 1em;
 }
 
 h6 {
-    margin: 1.5em 0 1em 0;
     font-size: 2.2rem;
+    margin: 1.5em 0 1em;
 }

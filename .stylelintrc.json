@@ -1,0 +1,38 @@
+{
+    "extends": [
+        "stylelint-config-standard",
+        "stylelint-config-recommended",
+        "stylelint-a11y/recommended",
+        "stylelint-config-prettier"
+    ],
+    "plugins": ["stylelint-no-unsupported-browser-features", "stylelint-a11y", "stylelint-order"],
+    "rules": {
+        "a11y/media-prefers-reduced-motion": null,
+        "color-no-invalid-hex": true,
+        "declaration-block-no-redundant-longhand-properties": true,
+        "declaration-empty-line-before": null,
+        "function-name-case": null,
+        "indentation": 4,
+        "max-nesting-depth": 3,
+        "no-descending-specificity": null,
+        "order/order": ["custom-properties", "declarations"],
+        "order/properties-alphabetical-order": true,
+        "plugin/no-unsupported-browser-features": [
+            true,
+            {
+                "severity": "warning",
+                "ignore": ["multicolumn", "css-appearance", "css-gradients", "text-decoration"]
+            }
+        ],
+        "selector-class-pattern": null,
+        "selector-combinator-space-before": null,
+        "selector-max-compound-selectors": 8,
+        "selector-no-qualifying-type": [true, { "ignore": ["attribute", "class"] }],
+        "shorthand-property-no-redundant-values": true,
+        "unit-allowed-list": ["rem", "em", "vw", "%", "vh", "fr", "s", "turn", "px"],
+        "unit-case": "lower",
+        "unit-no-unknown": true,
+        "value-keyword-case": null,
+        "value-no-vendor-prefix": true
+    }
+}

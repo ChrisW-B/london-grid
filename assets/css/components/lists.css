@@ -9,6 +9,7 @@ dl {
 
 ol,
 ul {
+    max-width: 100%;
     padding-left: 1.3em;
     padding-right: 1.5em;
 }
@@ -28,15 +29,10 @@ ol {
     list-style: decimal;
 }
 
-ul,
-ol {
-    max-width: 100%;
-}
-
 li {
+    line-height: 1.6em;
     margin: 0.5em 0;
     padding-left: 0.3em;
-    line-height: 1.6em;
 }
 
 dt {

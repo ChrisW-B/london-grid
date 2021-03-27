@@ -2,27 +2,27 @@
 
 {{#post}}
 <article class="post-content {{post_class}} {{#unless feature_image}}no-image{{/unless}}">
+    <div class="centerer">
+        <header class='title-and-nav'>
+            <span class='nav-arrow'>
+                {{#prev_post}}
+                <a title='{{title}}' href="{{url}}">&larr;</a>
+                {{/prev_post}}
+            </span>
+            <h2 class='blog-title'><a href= {{@site.url}}>{{@site.title}}</a></h2>
+            <span class='nav-arrow'>
+                {{#next_post}}
+                <a title='{{title}}' href="{{url}}">&rarr;</a>
+                {{/next_post}}
+            </span>
+        </header>
 
-    <header class='title-and-nav'>
-        <span class='nav-arrow'>
-            {{#prev_post}}
-            <a title='{{title}}' href="{{url}}">&larr;</a>
-            {{/prev_post}}
-        </span>
-        <h2 class='blog-title'><a href= {{@site.url}}>{{@site.title}}</a></h2>
-        <span class='nav-arrow'>
-            {{#next_post}}
-            <a title='{{title}}' href="{{url}}">&rarr;</a>
-            {{/next_post}}
-        </span>
-    </header>
-
-    {{>post-content}}
-    <section class='about-post'>
-      {{>post-info}}
-      {{>post-tags}}
-    </section>
-
+        {{>post-content}}
+        <section class='about-post'>
+        {{>post-info}}
+        {{>post-tags}}
+        </section>
+    </div>
 </article>
 {{/post}}
 {{>blog-footer}}

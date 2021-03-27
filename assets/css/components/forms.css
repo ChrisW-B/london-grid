@@ -6,9 +6,9 @@ form {
 }
 
 fieldset {
+    border: 0;
     margin: 0;
     padding: 0;
-    border: 0;
 }
 
 label {
@@ -28,9 +28,9 @@ input[type='url'],
 select,
 textarea {
     background: var(--color-bg);
-    border-radius: var(--radius);
     border: none;
-    border: solid 1px var(--color-border);
+    border: solid 1px var(--color-bg-base);
+    border-radius: var(--radius);
     color: inherit;
     display: block;
     outline: 0;
@@ -69,8 +69,8 @@ select {
 }
 
 select option {
-    color: var(--color-primary);
     background: var(--color-bg);
+    color: var(--color-primary);
 }
 
 select:focus::-ms-value {
@@ -107,10 +107,10 @@ input[type='radio'] {
 
 input[type='checkbox'] + label,
 input[type='radio'] + label {
-    display: flex;
     align-items: center;
     color: var(--color-base);
     cursor: pointer;
+    display: flex;
     font-size: 1em;
     font-weight: var(--font-normal);
     padding-left: calc((var(--height) * 0.6) + 0.75em);
@@ -119,38 +119,38 @@ input[type='radio'] + label {
     user-select: none;
 }
 
-input[type='checkbox'] + label:before,
-input[type='radio'] + label:before {
+input[type='checkbox'] + label::before,
+input[type='radio'] + label::before {
     background: var(--color-bg);
+    border: solid 1px var(--color-bg-base);
     border-radius: var(--radius);
-    border: solid 1px var(--color-border);
     content: '';
     display: inline-block;
     height: calc(var(--height) * 0.6);
     line-height: calc(var(--height) * 0.56);
+    margin-right: 1rem;
     text-align: center;
     width: calc(var(--height) * 0.6);
-    margin-right: 1rem;
 }
 
-input[type='checkbox']:checked + label:before,
-input[type='radio']:checked + label:before {
+input[type='checkbox']:checked + label::before,
+input[type='radio']:checked + label::before {
     background: var(--color-primary);
     border-color: var(--color-primary);
     color: var(--color-bg);
     content: '✓';
 }
 
-input[type='checkbox']:focus + label:before,
-input[type='radio']:focus + label:before {
+input[type='checkbox']:focus + label::before,
+input[type='radio']:focus + label::before {
     border-color: var(--color-primary);
     box-shadow: 0 0 0 1px var(--color-primary);
 }
 
-input[type='checkbox'] + label:before {
+input[type='checkbox'] + label::before {
     border-radius: var(--radius);
 }
 
-input[type='radio'] + label:before {
+input[type='radio'] + label::before {
     border-radius: 100%;
 }

@@ -3,21 +3,33 @@
 
 table {
     border-collapse: separate;
+    font-size: 0.8em;
     margin: 0 0 var(--margin) 0;
     width: 100%;
-    font-size: 0.8em;
 }
 
 th {
     color: var(--color-base);
     font-size: 0.9em;
     font-weight: var(--font-bold);
-    padding: 0 0.7em 0.4em 0.7em;
+    padding: 0 0.7em 0.4em;
     text-align: left;
 }
 
 td {
+    border-left-width: 0;
+    border-top-width: 0;
     padding: 0.4em 0.7em;
+}
+
+tbody tr {
+    border: solid 1px var(--color-bg-base);
+    border-left: 0;
+    border-right: 0;
+}
+
+tbody td {
+    border: solid 1px var(--color-bg-base);
     border-left-width: 0;
     border-top-width: 0;
 }
@@ -26,24 +38,12 @@ td:first-child {
     border-left-width: 1px;
 }
 
-tbody tr {
-    border: solid 1px var(--color-border);
-    border-left: 0;
-    border-right: 0;
-}
-
 tbody tr:first-child td {
     border-top-width: 1px;
 }
 
 tbody tr:nth-child(2n + 1) {
     background-color: var(--color-bg);
-}
-
-tbody td {
-    border: solid 1px var(--color-border);
-    border-left-width: 0;
-    border-top-width: 0;
 }
 
 tfoot {

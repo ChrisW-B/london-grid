@@ -2,8 +2,8 @@
 /* ---------------------------------------------------------- */
 
 .actions {
-    display: flex;
     cursor: default;
+    display: flex;
     list-style: none;
     margin: calc(var(--margin) * -0.5);
     padding-left: 0;
@@ -16,8 +16,8 @@
 
 .actions.special {
     justify-content: center;
-    width: 100%;
     margin-left: 0;
+    width: 100%;
 }
 
 .actions.special li:first-child {
@@ -84,11 +84,11 @@
         width: 100%;
     }
 
-    .actions:not(.fixed) li input[type='submit'].icon:before,
-    .actions:not(.fixed) li input[type='reset'].icon:before,
-    .actions:not(.fixed) li input[type='button'].icon:before,
-    .actions:not(.fixed) li button.icon:before,
-    .actions:not(.fixed) li .button.icon:before {
+    .actions:not(.fixed) li input[type='submit'].icon::before,
+    .actions:not(.fixed) li input[type='reset'].icon::before,
+    .actions:not(.fixed) li input[type='button'].icon::before,
+    .actions:not(.fixed) li button.icon::before,
+    .actions:not(.fixed) li .button.icon::before {
         margin-left: -0.5rem;
     }
 }

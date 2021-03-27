@@ -2,17 +2,19 @@
 
 {{#post}}
 <article class="post-content {{post_class}} {{#unless feature_image}}no-image{{/unless}}">
+    <div class="centerer">
 
-    <header class="post-content-header">
-        <h1 class="post-content-title">{{title}}</h1>
-    </header>
+        <header class="post-content-header">
+            <h1 class="post-content-title">{{title}}</h1>
+        </header>
 
-    {{#if feature_image}}
-        <img class="kg-image" src="{{feature_image}}" alt="{{title}}" loading='lazy' />
-    {{/if}}
+        {{#if feature_image}}
+            <img class="kg-image" src="{{feature_image}}" alt="{{title}}" loading='lazy' />
+        {{/if}}
 
-    <div class="post-content-body">
-        {{content}}
+        <div class="post-content-body">
+            {{content}}
+        </div>
     </div>
 
 </article>

@@ -1,4 +1,4 @@
-const {series, watch, src, dest, parallel} = require('gulp');
+const { series, watch, src, dest, parallel } = require('gulp');
 const pump = require('pump');
 
 // gulp plugins and utils
@@ -30,36 +30,36 @@ const handleError = (done) => {
 };
 
 function hbs(done) {
-    pump([
-        src(['*.hbs', 'partials/**/*.hbs', '!node_modules/**/*.hbs']),
-        livereload()
-    ], handleError(done));
+    pump(
+        [src(['*.hbs', 'partials/**/*.hbs', '!node_modules/**/*.hbs']), livereload()],
+        handleError(done),
+    );
 }
 
 function css(done) {
-    var processors = [
-        easyimport,
-        customProperties(),
-        colorFunction(),
-        autoprefixer(),
-        cssnano()
-    ];
+    var processors = [easyimport, customProperties(), colorFunction(), autoprefixer(), cssnano()];
 
-    pump([
-        src('assets/css/*.css', {sourcemaps: true}),
-        postcss(processors),
-        dest('assets/built/', {sourcemaps: '.'}),
-        livereload()
-    ], handleError(done));
+    pump(
+        [
+            src('assets/css/*.css', { sourcemaps: true }),
+            postcss(processors),
+            dest('assets/built/', { sourcemaps: '.' }),
+            livereload(),
+        ],
+        handleError(done),
+    );
 }
 
 function js(done) {
-    pump([
-        src('assets/js/*.js', {sourcemaps: true}),
-        uglify(),
-        dest('assets/built/', {sourcemaps: '.'}),
-        livereload()
-    ], handleError(done));
+    pump(
+        [
+            src('assets/js/*.js', { sourcemaps: true }),
+            uglify(),
+            dest('assets/built/', { sourcemaps: '.' }),
+            livereload(),
+        ],
+        handleError(done),
+    );
 }
 
 function zipper(done) {
@@ -67,20 +67,20 @@ function zipper(done) {
     var themeName = require('./package.json').name;
     var filename = themeName + '.zip';
 
-    pump([
-        src([
-            '**',
-            '!node_modules', '!node_modules/**',
-            '!dist', '!dist/**'
-        ]),
-        zip(filename),
-        dest(targetDir)
-    ], handleError(done));
+    pump(
+        [
+            src(['**', '!node_modules', '!node_modules/**', '!dist', '!dist/**']),
+            zip(filename),
+            dest(targetDir),
+        ],
+        handleError(done),
+    );
 }
 
 const cssWatcher = () => watch('assets/css/**', css);
 const hbsWatcher = () => watch(['*.hbs', 'partials/**/*.hbs', '!node_modules/**/*.hbs'], hbs);
-const watcher = parallel(cssWatcher, hbsWatcher); const build = series(css, js);
+const watcher = parallel(cssWatcher, hbsWatcher);
+const build = series(css, js);
 const dev = series(build, serve, watcher);
 
 exports.build = build;

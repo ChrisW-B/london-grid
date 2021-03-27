@@ -6,43 +6,43 @@
 }
 
 .kg-embed-card {
+    align-items: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
     min-width: 100%;
 }
 
 .kg-image {
-    max-width: 100%;
     max-height: 120rem;
+    max-width: 100%;
 }
 
 .kg-card figcaption {
-    padding: 1.5rem;
-    font-size: 1.3rem;
-    line-height: 1.4em;
-    font-weight: 600;
     color: var(--color-base);
-    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 600;
+    line-height: 1.4em;
     opacity: 0.4;
+    padding: 1.5rem;
+    text-align: center;
 }
 
 .kg-width-wide {
-    position: relative;
-    width: 75vw;
-    min-width: 100%;
     margin-left: calc(50% - 50vw);
     margin-right: calc(50% - 50vw);
+    min-width: 100%;
+    position: relative;
     transform: translateX(calc(50vw - 50%));
+    width: 75vw;
 }
 
 .kg-width-full {
-    position: relative;
-    width: 94vw;
-    min-width: 100%;
     margin-left: calc(50% - 50vw);
     margin-right: calc(50% - 50vw);
+    min-width: 100%;
+    position: relative;
     transform: translateX(calc(50vw - 50%));
+    width: 94vw;
 }
 
 .kg-width-full figcaption {
@@ -63,12 +63,12 @@
 .kg-gallery-container {
     display: flex;
     flex-direction: column;
-    position: relative;
-    width: 75vw;
-    min-width: 100%;
     margin-left: calc(50% - 50vw);
     margin-right: calc(50% - 50vw);
+    min-width: 100%;
+    position: relative;
     transform: translateX(calc(50vw - 50%));
+    width: 75vw;
 }
 
 .kg-gallery-row {
@@ -79,13 +79,13 @@
 
 .kg-gallery-image img {
     display: block;
+    height: 100%;
     margin: 0;
     width: 100%;
-    height: 100%;
 }
 
 .kg-gallery-row:not(:first-of-type) {
-    margin: 0.75em 0 0 0;
+    margin: 0.75em 0 0;
 }
 
 .kg-gallery-image:not(:first-of-type) {
@@ -104,97 +104,99 @@
 }
 
 .kg-bookmark-container {
-    display: flex;
     color: var(--color-base);
-    text-decoration: none;
+    display: flex;
     min-height: 148px;
+    text-decoration: none;
 }
 
-.kg-bookmark-container:hover {
+.kg-bookmark-container:hover,
+.kg-bookmark-container:focus {
     text-decoration: none;
 }
 
 .kg-bookmark-content {
+    align-items: flex-start;
+    background: var(--color-bg-primary);
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    align-items: flex-start;
     justify-content: flex-start;
-    background: #fff;
     padding: calc(1.75 * var(--margin));
 }
 
 .kg-bookmark-title {
-    font-size: 100%;
-    line-height: 1.5em;
-    font-weight: 600;
     color: var(--color-base);
+    font-size: 100%;
+    font-weight: 600;
+    line-height: 1.5em;
 }
 
-.kg-bookmark-container:hover .kg-bookmark-title {
-    opacity: 1;
+.kg-bookmark-container:hover .kg-bookmark-title,
+.kg-bookmark-container:focus .kg-bookmark-title {
     color: var(--color-primary);
+    opacity: 1;
 }
 
 .kg-bookmark-description {
-    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    display: box;
     font-size: 90%;
-    line-height: 1.5em;
     font-weight: 400;
+    -webkit-line-clamp: 2;
+    line-height: 1.5em;
     margin-top: var(--margin);
     max-height: 3em;
-    overflow-y: hidden;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
     opacity: 0.75;
+    overflow-y: hidden;
 }
 
 .kg-bookmark-thumbnail {
-    position: relative;
-    min-width: 33%;
     max-height: 100%;
+    min-width: 33%;
+    position: relative;
 }
 
 .kg-bookmark-thumbnail img {
+    height: 100%;
+    left: 0;
+    object-fit: cover;
     position: absolute;
     top: 0;
-    left: 0;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
 }
 
 .kg-bookmark-metadata {
-    display: flex;
     align-items: center;
+    display: flex;
+    flex-wrap: wrap;
     font-size: 90%;
     font-weight: 400;
     margin-top: var(--margin);
-    flex-wrap: wrap;
     opacity: 0.75;
 }
 
 .kg-bookmark-icon {
-    width: 24px;
     height: 24px;
     margin-right: 8px;
+    width: 24px;
 }
 
 .kg-bookmark-author {
     line-height: 1.5em;
 }
 
-.kg-bookmark-author:after {
+.kg-bookmark-author::after {
     content: '—';
     margin: 0 6px;
 }
 
 .kg-bookmark-publisher {
-    overflow: hidden;
     line-height: 1.5em;
+    max-width: 240px;
+    overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    max-width: 240px;
 }
 
 @media (max-width: 850px) {
@@ -209,16 +211,13 @@
     }
 
     .kg-bookmark-content {
+        order: 2;
         padding: var(--margin);
     }
 
     .kg-bookmark-thumbnail {
+        min-height: 22rem;
         order: 1;
         width: 100%;
-        min-height: 22rem;
-    }
-
-    .kg-bookmark-content {
-        order: 2;
     }
 }
