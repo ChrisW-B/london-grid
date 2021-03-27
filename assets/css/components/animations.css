@@ -4,6 +4,7 @@
 .transition-fade {
     animation: slideUp 0.9s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
     opacity: 1;
+    overflow: visible;
     transform: translate3d(0, 4vh, 0);
     transition: 0.25s;
 }

@@ -27,7 +27,8 @@ body {
     transition-delay: 0.25s;
 }
 
-.home-template {
+.home-template,
+.paged {
     overflow: visible;
 }
 
@@ -51,6 +52,8 @@ body {
 
 .site-wrapper {
     min-height: 100vh;
+    /* stylelint-disable-next-line value-no-vendor-prefix */
+    min-height: -webkit-fill-available;
 }
 
 .page-head {
@@ -320,16 +323,16 @@ p {
 }
 
 .post-content {
-    align-items: center;
-    display: flex;
-    flex-flow: column;
     margin: 0 auto;
-    padding: 0 0 6vw;
+    max-width: 120rem;
 }
 
 .centerer {
+    align-items: center;
+    display: flex;
+    flex-flow: column;
     margin: 0 5vw;
-    max-width: 120rem;
+    padding: 0 0 6vw;
 }
 
 .post-content-header {

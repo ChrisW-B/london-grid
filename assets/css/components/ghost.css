@@ -140,7 +140,7 @@
 
 .kg-bookmark-description {
     -webkit-box-orient: vertical;
-    display: box;
+    display: flex;
     font-size: 90%;
     font-weight: 400;
     -webkit-line-clamp: 2;
