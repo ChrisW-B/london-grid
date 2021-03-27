@@ -52,6 +52,7 @@ body {
 
 .site-wrapper {
     min-height: 100vh;
+    /* stylelint-disable-next-line value-no-vendor-prefix */
     min-height: -webkit-fill-available;
 }
 
