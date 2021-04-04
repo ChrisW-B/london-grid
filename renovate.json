@@ -7,7 +7,7 @@
   "labels": ["dependency"],
   "assignAutomerge": true,
   "automerge": true,
-  "schedule": ["before 12pm on Monday"],
+  "schedule": ["before 3pm on Sunday"],
   "packageRules": [
     {
       "packagePatterns": ["*"],
